@@ -3,7 +3,7 @@
 A simple Linux shell implementation.
 
 ## Building
-run `make`. An executable names `./psh` will be generated.
+run `make`. An executable named `psh` will be generated in the `build` directory
 
 ## Features
  - Command history (functions like bash/zsh). Includes `history, `!!`, and `!n` commands
