@@ -3,7 +3,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "utils.h"
+#include "../include/utils.h"
 
 /* Get the current user's home directory
  * First check HOME environment variable

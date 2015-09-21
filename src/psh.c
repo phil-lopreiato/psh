@@ -9,9 +9,9 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-#include "history.h"
-#include "psh.h"
-#include "utils.h"
+#include "../include/history.h"
+#include "../include/psh.h"
+#include "../include/utils.h"
 
 int
 main()

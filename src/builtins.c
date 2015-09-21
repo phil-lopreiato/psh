@@ -4,9 +4,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "builtins.h"
-#include "history.h"
-#include "utils.h"
+#include "../include/builtins.h"
+#include "../include/history.h"
+#include "../include/utils.h"
 
 int
 psh_builtin_count() {

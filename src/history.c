@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "history.h"
-#include "utils.h"
+#include "../include/history.h"
+#include "../include/utils.h"
 
 FILE *
 psh_open_writable_history()

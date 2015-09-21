@@ -5,15 +5,16 @@ CFLAGS=-std=c99 -Wall -pedantic -g
 
 all: psh
 
-utils: utils.h utils.c
-	${CC} ${CFLAGS} -c utils.c
+utils: include/utils.h src/utils.c
+	${CC} ${CFLAGS} -c src/utils.c
+	@mv utils.o build/
 
-builtins: utils builtins.h builtins.c
-	${CC} ${CFLAGS} -c builtins.c
+builtins: utils include/builtins.h src/builtins.c
+	${CC} ${CFLAGS} -c src/builtins.c
+	@mv builtins.o build/
 
-psh: utils builtins psh.c psh.h history.c history.h
-	${CC} ${CFLAGS} history.c psh.c -o psh utils.o builtins.o
+psh: utils builtins src/psh.c include/psh.h src/history.c include/history.h
+	${CC} ${CFLAGS} src/history.c src/psh.c -o build/psh build/utils.o build/builtins.o
 
 clean:
-	@rm -f *.o
-	@rm -f psh
+	@rm -f build/*
