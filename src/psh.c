@@ -3,6 +3,7 @@
 #include <libgen.h>
 #include <limits.h>
 #include <pwd.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,12 +14,23 @@
 #include "../include/psh.h"
 #include "../include/utils.h"
 
+void handle_sigint(int sig)
+{
+        printf("\n");
+        psh_print_prompt();
+        fflush(stdout);
+        signal(SIGINT, handle_sigint);
+}
+
 int
 main()
 {
         char *line;
         char **args;
         int status;
+
+        /* Install a singal handler for SIGTERM */
+        signal(SIGINT, handle_sigint);
 
         do {
                 /* Give the user a prompt */
